@@ -235,3 +235,18 @@ ECMAScript5为数组定义了5个迭代方法。每个方法都接收两个参�
     numbers.forEach(function(item, index, array){
         //执行某些操作
     });
+
+### 归并方法
+ECMAScript新增了两个归并数组的方法：reduce()、reduceRight()
+- 这两个方法都会迭代数组的所有项，然后构建一个最终返回的值。
+- reduce()方法从数组的第一项开始，逐个遍历到最后
+- reduceRight()则从数组的最后一项开始，向前遍历到第一项。
+- 这两个方法都接收两个参数：一个在每一项上调用的函数和（可选的）作为归并基础的初始值。
+- 传给reduce()和reduceRight()的函数接收4个参数：前一个值、当前值、项的索引和数组对象，这个函数返回的任何值都会作为第一个参数自动传给下一项。
+
+    var numbers = [1, 2, 3, 4, 5];
+    var sum = numbers.reduce(function(prev, cur, index, array){
+        return prev + cur;
+    });
+    alert(sum);
+
