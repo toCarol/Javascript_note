@@ -250,3 +250,4 @@ ECMAScript新增了两个归并数组的方法：reduce()、reduceRight()
     });
     alert(sum);
 
+
