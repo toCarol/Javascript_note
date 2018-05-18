@@ -29,19 +29,14 @@
 
     //项目的key
     sonar.projectKey=react-demo
-
     //项目的名字
     sonar.projectName=C:\Users\admin\Desktop\todomvc
-
     //项目的版本
     sonar.projectVersion=1.0.0
-
     //需要分析的源码目录
     sonar.sources=react
-
     //需要分析的语言
     sonar.language=js
-
     sonar.sourceEncoding=UTF-8
 
 - 在项目目录下执行命令：sonar-scanner (即开始对项目进行分析)
@@ -68,6 +63,33 @@
     sonar.javascript.lcov.reportPaths=coverage/lcov.info       //覆盖率报告的路径
 
 - 在项目下执行sonar-scanner 即可生成含有覆盖率数据的分析报告
+
+## 在同一个项目中分析不同类型的文件配置方法
+
+    sonar.projectKey=ncsDownload
+    sonar.projectName=ncs-download
+    sonar.projectVersion=1.0
+    sonar.sourceEncoding=UTF-8
+    sonar.modules=javascript-module,CSS-module,HTML-module
+
+    ## JavaScrit module
+    javascript-module.sonar.projectName=ncsDownload_js
+    javascript-module.sonar.language=js
+    javascript-module.sonar.sources=js
+    javascript-module.sonar.projectBaseDir=.
+
+    ## CSS module
+    CSS-module.sonar.projectName=ncsDownload_css
+    CSS-module.sonar.language=css
+    CSS-module.sonar.sources=css
+    CSS-module.sonar.projectBaseDir=.
+
+    ## HTML module
+    HTML-module.sonar.projectName=ncsDownload_HTML
+    HTML-module.sonar.language=web
+    HTML-module.sonar.sources=.
+    HTML-module.sonar.exclusions=css/*.css,js/*.js,     //排除某些目录
+    HTML-module.sonar.projectBaseDir=.
 
 
 
