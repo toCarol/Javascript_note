@@ -40,6 +40,7 @@
     sonar.language=js
     sonar.sourceEncoding=UTF-8
 
+
 - 在项目目录下执行命令：sonar-scanner (即开始对项目进行分析)
 - 分析结束后在分析结果中会有一个连接，打开该链接即可查看分析报告
 
@@ -50,11 +51,14 @@
 
     cnpm install --save-dev istanbul@v1.1.0-alpha.1
 
+
 - 在package.json中写入：
+
 
     "script": {
         "coverage": "istanbul cover node_modules/mocha/bin/_mocha -t 2000000 --compilers js:babel-register --recursive tools/testSetup.js test/contianers/*.spec.js"
     },
+
 
 - 在项目下执行 npm run coverage,可以生成覆盖率报告
 - 在新生成的coverage目录下可以看到生成了一个lcov.info文件，该文件用于向sonar提供覆盖率结果
@@ -64,6 +68,7 @@
     sonar.tests=test/containers       //需要测试的目录
     sonar.test.inclusions=/*.spec.js  //需要测试的文件 
     sonar.javascript.lcov.reportPaths=coverage/lcov.info       //覆盖率报告的路径
+
 
 - 在项目下执行sonar-scanner 即可生成含有覆盖率数据的分析报告
 
