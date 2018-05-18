@@ -27,6 +27,7 @@
 - 在你想要分析的项目的根目录创建sonar-project.properties文件
 - 在sonar-project.properties中配置一些基础参数：如下
 
+
     //项目的key
     sonar.projectKey=react-demo
     //项目的名字
@@ -46,6 +47,7 @@
 使用istanbul扫描覆盖率(前提：已编写单元测试用例。这里我采用的mocha进行单元测试。)
 - 在项目中安装istanbul
 
+
     cnpm install --save-dev istanbul@v1.1.0-alpha.1
 
 - 在package.json中写入：
@@ -57,6 +59,7 @@
 - 在项目下执行 npm run coverage,可以生成覆盖率报告
 - 在新生成的coverage目录下可以看到生成了一个lcov.info文件，该文件用于向sonar提供覆盖率结果
 - 在sonar-project.properties中添加配置：
+
 
     sonar.tests=test/containers       //需要测试的目录
     sonar.test.inclusions=/*.spec.js  //需要测试的文件 
