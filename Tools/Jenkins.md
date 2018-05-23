@@ -24,8 +24,42 @@
 - Credentials: 这里需要添加在github上生成的token. 添加后可以点击下面的“Test connection”按钮，检测token是否可以正常连接到github
 - 点右下方的第二个“高级”按钮，添加Hook URL和 Shared secret.
 ![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins2.PNG)
+- 需要将Jenkins中生成的hook添加到github项目中。
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins13.PNG)
+
 
 **GitHub pull Request Builder**
 GitHub pull Request Builder 可以配置在github上提交pull request时触发Jenkins 构建
 配置如下：
 ![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins3.PNG)
+
+3. 全局工具配置：
+**JDK**
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins4.PNG)
+
+**Git**
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins5.PNG)
+
+**SonarQube Scanner**
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins6.PNG)
+
+## 项目配置
+1. 新建一个自由风格的项目
+2. 填写基本配置
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins7.PNG)
+3. 源码管理
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins8.PNG)
+4. 构建触发器
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins9.PNG)
+5. 构建，选择SonarQube Scanner
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins10.PNG)
+6. 增加构建步骤
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins11.PNG)
+7. 增加构建后操作
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins12.PNG)
+
+## 执行构建
+在github中提交代码后创建一条pull request,会在Jenkins中开始自动构建：
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins13.PNG)
+在github的pull request中可以看到相应的Jenkins build的状态表示：
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins14.PNG)
