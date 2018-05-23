@@ -64,10 +64,9 @@
 - 在新生成的coverage目录下可以看到生成了一个lcov.info文件，该文件用于向sonar提供覆盖率结果
 - 在sonar-project.properties中添加配置：
 
-
-    sonar.tests=test/containers       //需要测试的目录
+    ```sonar.tests=test/containers       //需要测试的目录
     sonar.test.inclusions=/*.spec.js  //需要测试的文件 
-    sonar.javascript.lcov.reportPaths=coverage/lcov.info       //覆盖率报告的路径
+    sonar.javascript.lcov.reportPaths=coverage/lcov.info       //覆盖率报告的路径```
 
 
 - 在项目下执行sonar-scanner 即可生成含有覆盖率数据的分析报告
