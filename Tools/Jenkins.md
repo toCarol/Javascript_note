@@ -12,3 +12,4 @@
 
 2. 系统配置：
 **SonarQube Servers**
+![avatar](raw.githubusercontent.com/toCarol/Javascript_note/master/Jenkins1.PNG)
