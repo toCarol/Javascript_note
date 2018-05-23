@@ -27,7 +27,8 @@
 - 在你想要分析的项目的根目录创建sonar-project.properties文件
 - 在sonar-project.properties中配置一些基础参数：如下
 
-    ```//项目的key
+    ```javascript
+    //项目的key
     sonar.projectKey=react-demo
     //项目的名字
     sonar.projectName=C:\Users\admin\Desktop\todomvc
@@ -38,6 +39,7 @@
     //需要分析的语言
     sonar.language=js
     sonar.sourceEncoding=UTF-8
+    ```
 
 - 在项目目录下执行命令：sonar-scanner (即开始对项目进行分析)
 - 分析结束后在分析结果中会有一个连接，打开该链接即可查看分析报告
@@ -46,27 +48,34 @@
 使用istanbul扫描覆盖率(前提：已编写单元测试用例。这里我采用的mocha进行单元测试。)
 - 在项目中安装istanbul
 
-    ```cnpm install --save-dev istanbul@v1.1.0-alpha.1
+    ```javascript
+    cnpm install --save-dev istanbul@v1.1.0-alpha.1
+    ```
 
 - 在package.json中写入：
 
-    ```"script": {
+    ```javascript
+    "script": {
         "coverage": "istanbul cover node_modules/mocha/bin/_mocha -t 2000000 --compilers js:babel-register --recursive tools/testSetup.js test/contianers/*.spec.js"
     },
+    ```
 
 - 在项目下执行 npm run coverage,可以生成覆盖率报告
 - 在新生成的coverage目录下可以看到生成了一个lcov.info文件，该文件用于向sonar提供覆盖率结果
 - 在sonar-project.properties中添加配置：
 
-    ```sonar.tests=test/containers       //需要测试的目录
+    ```javascript
+    sonar.tests=test/containers       //需要测试的目录
     sonar.test.inclusions=/*.spec.js  //需要测试的文件 
     sonar.javascript.lcov.reportPaths=coverage/lcov.info       //覆盖率报告的路径
+    ```
 
 - 在项目下执行sonar-scanner 即可生成含有覆盖率数据的分析报告
 
 ## 在同一个项目中分析不同类型的文件配置方法
 
-    ```sonar.projectKey=ncsDownload
+    ```javascript
+    sonar.projectKey=ncsDownload
     sonar.projectName=ncs-download
     sonar.projectVersion=1.0
     sonar.sourceEncoding=UTF-8
@@ -90,6 +99,7 @@
     HTML-module.sonar.sources=.
     HTML-module.sonar.exclusions=css/*.css,js/*.js,     //排除某些目录
     HTML-module.sonar.projectBaseDir=.
+    ```
 
 
 
