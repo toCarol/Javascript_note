@@ -60,6 +60,6 @@ GitHub pull Request Builder 可以配置在github上提交pull request时触发J
 
 ## 执行构建
 在github中提交代码后创建一条pull request,会在Jenkins中开始自动构建：
-![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/image/Jenkins14.PNG)
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/image/Jenkins14.png)
 在github的pull request中可以看到相应的Jenkins build的状态表示：
-![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/image/Jenkins15.PNG)
+![avatar](https://raw.githubusercontent.com/toCarol/Javascript_note/master/image/Jenkins15.png)
