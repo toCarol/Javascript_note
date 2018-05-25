@@ -2,7 +2,9 @@
 Date类型使用自UTC(Coordinated Universal Time, 国际协调时间)1970年1月1日午夜（零时）开始经过的毫秒数来保存日期。Date类型保存的日期能够精确到1970年1月1日之前或之后的285616年。
 创建一个日期对象:
 
+    ```javascript
     var now = new Date();
+    ```
 
 新创建的对象会自动获得当前日期和时间。如果想根据特定的日期和时间创建日期对象，需要传入表示该日期的毫秒数。
 为了简化这个计算过程，ECMAScript提供两个方法：Date.parse()和Date.UTC()。
@@ -13,7 +15,9 @@ ECMAScript-262没有定义Date.parse()应该支持哪种日期格式，因此这
 - "英文星期几 英文月名 日 年 时:分:秒 时区"，如 Tue May 25 2004 00:00:00 GMT-0700;
 - ISO 8601扩展格式YYYY-MM-DDTHH:mm:ss.sssZ(例如 2004-05-25T00:00:00),只有兼容ECMAScript5的实现支持这种格式;
 
-   var someDate = new Date(Date.parse("May 25, 2004"));
+    ```javascript
+    var someDate = new Date(Date.parse("May 25, 2004"));
+    ```
 
 如果传入Date.parse()方法的字符串不能表示日期，那么它会返回NaN。
 
@@ -22,9 +26,11 @@ ECMAScript-262没有定义Date.parse()应该支持哪种日期格式，因此这
 - 如果没有提供月中的天数，则假设天数为1
 - 如果省略其他参数，则统统假设为0
 
+    ```javascript
     //GMT时间2000年1月1日午夜零时
     var y2k = new Date(Date.UTC(2000, 0));
     //GMT时间2005年5月5日下午5:55:55
     var allFives = new Date(Date.UTC(2005, 4, 5, 17, 55, 55));
+    ```
 
 3. Date构造函数也可以模仿Date.UTC(),但有一点不同：日期和时间都基于本地时区而非GMT来创建。

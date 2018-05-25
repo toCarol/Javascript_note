@@ -14,27 +14,34 @@
 创建Object的方式有两种：
 1. 使用new操作符后跟Object构造函数
 
+    ```javascript
     var person = new Object();
     person.name = "Nicholas";
     person.age = 29;
+    ```
 
 2. 使用对象字面量表示法(目的在于简化创建包含大量属性的对象的过程)
 
+    ```javascript
     var person = {
         name: "Nicholas",
         age: 29
     };
+    ```
 
 在对象字面量中，使用逗号来分隔不同的属性。对象的最后一个属性后面不需要添加逗号。
 >ECMAScript中的表达式上下文指的是能够返回一个值（表达式）。赋值操作符表示后面是一个值，所以左花括号在这里表示一个表达式的开始。同样的花括号如果在一个语句上下文中，例如跟在if语句后面，则表示一个语句块的开始。
 
 使用对象字面量语法时，留空花括号，就可以定义只包含默认属性和方法的对象，如下所示：
 
+    ```javascript
     var person = {};   //与new Object()相同
     person.name = "Nicholas";
+    ```
 
 开发人员更喜欢对象字面量语法，因为这种语法要求的代码量少，而且能够给人封装数据的感觉。实际上，对象字面量也是向函数传递大量可选参数的首选方式。
 
+    ```javascript
     function displayInfo(args) {
         var output = "";
         if (typeof args.name == "string") {
@@ -52,6 +59,7 @@
     displayInfo({
         name: "Grey"
     });
+    ```
 
 访问对象属性的方法有两种：
 1. 点表示法：通常，除非必须使用变量来访问属性，否则我们建议使用点表示法。
@@ -59,7 +67,9 @@
 从功能上看，这两种方法没有任何区别，但方括号语法的主要优点是可以通过变量来访问属性。
 >如果属性名中包含会导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以使用方括号表示法。
 
+    ```javascript
     person["first name"] = "Nicholas";
+    ```
 
 
 
